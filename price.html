@@ -177,44 +177,111 @@
                 </div>  
             </div>
         </div>
+
+
         <div class="tool-header">
+
             <div class="tool-header-wrap">
+
                 <h1>這些超酷的應用，都來自 AI工具王</h1>
                 <div class="search">
                     <input type="text" placeholder="輸入關鍵字搜尋" />
                     <span class="material-icons search-icon">search</span>
                 </div>
+
                 <div class="tool-nav">
-                    <div class="filter">
-                        <a href="#">篩選</a><span
-                            class="material-icons filter_alt">
-                            filter_alt
-                        </span>
-                    </div>
+                    <div class="filter2 mt-8">
+                        <div class="dropdown">
+                          <button type="button" class="dropdown-btn2 fs-normal">
+                            <span class="dropdown-btnText2">篩選</span>
+                            <span class="material-icons fs-normal ml-12">
+                              filter_alt
+                            </span>
+                          </button>
+                          <ul class="dropdown-menu2">
+                            <li class="mb-8"><h6>AI 模型</h6></li>
+                            <li class="mb-8">
+                              <a href="#">所有模型</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">卡卡</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">杰杰</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">琪琪</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">昊昊</a>
+                            </li>
+              
+                            <li class="mb-8"><h6>類型</h6></li>
+                            <li class="mb-8">
+                              <a href="#">所有類型</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">篩選項目 1</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">篩選項目 2</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">篩選項目 3</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">篩選項目 4</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">篩選項目 5</a>
+                            </li>
+                            <li class="mb-8">
+                              <a href="#">篩選項目 6</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+
+
                     <ul class="menu">
-                        <li class="active"><a href="#" class="active">全部</a></li>
-                        <li><a href="#">聊天</a></li>
-                        <li><a href="#">影像辨識</a></li>
-                        <li><a href="#">翻譯</a></li>
-                        <li><a href="#">行銷</a></li>
-                        <li><a href="#">客服</a></li>
-                        <li><a href="#">生產力</a></li>
+                        <li class="active"><a href="#" class="active" data-id="0">全部</a></li>
+                        <li data-id="1"><a href="#">聊天</a></li>
+                        <li data-id="2"
+                         ><a href="#">影像辨識</a></li>
+                        <li data-id="3"><a href="#">翻譯</a></li>
+                        <li data-id="4"><a href="#">行銷</a></li>
+                        <li data-id="5"><a href="#">客服</a></li>
+                        <li data-id="6"><a href="#">生產力</a></li>
                     </ul>
-                    <div class="select-order">
-                        <select name="order" id="order">
-                            <option value="由新到舊">由新到舊</option>
-                            <option value="由舊到新">由舊到新</option>
-                        </select>
+
+
+                    <div class="dropdown">
+                        <button type="button" class="dropdown-btn fs-normal">
+                        <span class="dropdown-btnText">由新到舊</span>
+                        <span class="material-icons fs-normal ml-12">
+                            expand_more
+                        </span>
+                        </button>
+                        <ul class="dropdown-menu">
+                        <li class="mb-8">
+                            <a href="#" class="new-to-old">由新到舊</a>
+                        </li>
+                        <li>
+                            <a href="#" class="old-to-new">由舊到新</a>
+                        </li>
+                        </ul>
                     </div>
+
                 </div>
                 <div class="tool-wrap">
                     <ul class="tool-list">
-                        <li class="tool-cards">
+                        <li class="tool-cards" data-id="1">
                             <a href="#"><img
                                     class="tool"
                                     src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool1.png?raw=true"
                                     alt="Chatbot Builder" />
                             </a>
+
                             <div class="tool-content">
                                 <h3 class="tool-name">Chatbot Builder
                                 </h3>
@@ -227,6 +294,7 @@
                                 <h3 class="model-name">AI 模型</h3>
                                 <span class="model-txt">卡卡 </span>
                             </div>
+
                             <div class="tool-group">
                                 <h3 class="group-name">#聊天</h3>
                                 <a href="#" target="_blank"><img
@@ -235,7 +303,8 @@
                                         alt="分享" /></a>
                             </div>
                         </li>
-                        <li class="tool-cards">
+
+                        <li class="tool-cards" data-id="2">
                             <a href="#"><img
                                     src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool2.png?raw=true"
                                     alt="Image Recognition Platform"
@@ -259,7 +328,7 @@
                                         alt="分享" /></a>
                             </div>
                         </li>
-                        <li class="tool-cards">
+                        <li class="tool-cards" data-id="3">
                             <a href="#"><img
                                     class="tool"
                                     src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool3.png?raw=true"
@@ -282,7 +351,7 @@
                                         alt="分享" /></a>
                             </div>
                         </li>
-                        <li class="tool-cards">
+                        <li class="tool-cards" data-id="4">
                             <a href="#"><img
                                     class="tool"
                                     src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool4.png?raw=true"
@@ -305,7 +374,7 @@
                                         alt="分享" /></a>
                             </div>
                         </li>
-                        <li class="tool-cards">
+                        <li class="tool-cards" data-id="5">
                             <a href="#"><img
                                     class="tool"
                                     src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool5.png?raw=true"
@@ -327,7 +396,7 @@
                                 </a>
                             </div>
                         </li>
-                        <li class="tool-cards">
+                        <li class="tool-cards" data-id="6">
                             <a href="#"><img
                                     class="tool"
                                     src="https://github.com/hexschool/2022-web-layout-training/blob/main/2023web-camp/tool6.png?raw=true"
@@ -353,6 +422,9 @@
                             </div>
                         </li>
                     </ul>
+
+                    <ul class="tool-list-filter"></ul>
+
                 </div>
                 <div class="pages">
                     <ul class="page">
@@ -435,7 +507,7 @@
             </div>
         </div>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/price.js"></script>
 </body>
 </html>

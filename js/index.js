@@ -90,10 +90,6 @@ for (let i = 0; i < menuLi.length; i++) {
 
 //AI 工具王下拉選單
 // 開起選單
-$('.dropdown-btn').click(function (e) {
-  e.preventDefault();
-  $('.dropdown-menu').show();
-});
 
 const dropdownMenu = document.querySelector('.dropdown-menu')
 
@@ -116,10 +112,17 @@ dropdownMenu.addEventListener('click', function (e) {
 }
 )
 
-
-/* toolListFilter.innerHTML */
-
 // 切換按鈕文字
+$('.dropdown-btn').click(function (e) {
+  e.preventDefault();
+  $('.dropdown-menu').show();
+});
+
+$('.dropdown-btn2').click(function (e) {
+  e.preventDefault();
+  $('.dropdown-menu2').show();
+});
+
 $('.new-to-old').click(function (e) {
   e.preventDefault();
   $('.dropdown-menu').toggleClass('active');
@@ -137,22 +140,9 @@ $('.old-to-new').click(function (e) {
 $('.filter').mouseleave(function () {
   $('.dropdown-menu').hide()
 });
-
-/* 
-for (let i = 1; i < menuLi.length; i++) {
-  menuLi[i].addEventListener('click', function (e) {
-    toolList.style.display = 'none';
-    toolListFilter.style.display = 'flex';
-    toolListFilter.innerHTML = "";
-    toolListFilter.innerHTML = `<li class="tool-cards">` + document.querySelector(`.tool-list .tool-cards:nth-child(${this.dataset.id})`).innerHTML + `</li>`;
-
-  })
-} */
-
-
-
-
-/* console.log(document.querySelector(`.tool-list .tool-cards:nth-child(1)`).dataset.id) */
+$('.filter2').mouseleave(function () {
+  $('.dropdown-menu2').hide()
+});
 
 
 //分頁事件
