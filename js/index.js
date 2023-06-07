@@ -17,6 +17,7 @@ const menuBtn = document.querySelector('.menuBtn')
 const breakpoint = 768;
 
 function menuClick() {
+  console.log("test")
   if (menuBtn.innerHTML.trim() === 'menu') {
     mPrice.style.display = 'block';
     mFooter.style.display = 'block';
@@ -61,6 +62,7 @@ window.addEventListener('resize', throttle(function () {
   }
 }, 200))
 
+menuBtn.addEventListener('click', menuClick);
 
 //AI 工具王 menu 事件
 const menuLi = document.querySelectorAll('.menu li')
@@ -144,16 +146,6 @@ $('.filter2').mouseleave(function () {
   $('.dropdown-menu2').hide()
 });
 
-
-//分頁事件
-menuBtn.addEventListener('click', menuClick);
-const page = document.querySelectorAll('.page > li > a')
-for (let i = 0; i < page.length; i++) {
-  page[i].addEventListener('mouseenter', function () {
-    document.querySelector('.page .active').classList.remove('active')
-    this.parentNode.classList.add('active')
-  })
-}
 
 //顧客評論事件
 var swiper = new Swiper(".swiper-container", {

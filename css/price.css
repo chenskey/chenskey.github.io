@@ -141,19 +141,19 @@ table {
 }
 
 body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     position: relative;
-    height: 20%;
+    background: #020202;
 }
 
 .container {
     max-width: 1920px;
-    height: auto;
-    background: #020202;
+    /*     height: auto; */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
+    padding: 0 12px;
 }
 
 .header-wrap {
@@ -162,7 +162,7 @@ body {
 }
 
 .header {
-    height: 80px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -196,32 +196,34 @@ body {
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-}
-
-.content .title {
     margin-top: 40px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
-    padding-left: 12px;
-    padding-right: 12px;
+    /*     padding-left: 12px;
+    padding-right: 12px; */
 }
 
-.content .title .title1 {
+.content .title1 h1 {
     font-size: 120px;
     line-height: 144px;
     font-weight: 900;
     color: #ffffff;
 }
 
-.content .title .title2 {
+.content .title2 {
+    margin-top: 80px;
+    display: flex;
+    justify-content: end;
+}
+
+.content .title2 h3 {
+    max-width: 636px;
     font-size: 48px;
     line-height: 57.6px;
     font-weight: 900;
-    padding-left: 660px;
-    margin-top: 80px;
+    /* padding-left: 660px; */
     color: #ffffff;
+
 }
 
 .content .deco {
@@ -259,7 +261,6 @@ body {
     left: 0;
     animation-delay: 1s;
 }
-
 
 @keyframes marquee {
     0% {
@@ -307,15 +308,20 @@ body {
 }
 
 .teacher-card {
-    max-width: 636px;
-    height: 318px;
-    border: 1px solid #ffffff;
+    width: 48%;
+    /* height: 318px; */
+    border: 1px solid #525252;
     border-radius: 16px;
     margin-bottom: 24px;
+    transition: all 0.3s;
+}
+
+.teacher-card:hover {
+    border: 1px solid #ffffff;
 }
 
 .teacher-card .name {
-    width: 636px;
+    width: 48%;
     height: 254px;
     color: #ffffff;
     padding: 20px 32px;
@@ -325,6 +331,7 @@ body {
     color: #ffffff;
     font-size: 32px;
     line-height: 38.4px;
+    margin-bottom: 0;
 }
 
 .teacher-card .name .spec {
@@ -341,10 +348,10 @@ body {
 }
 
 .teacher-card .lesson-fees {
-    height: 54px;
+    /* height: 54px; */
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid #ffffff;
+    border-top: 1px solid #525252;
     padding: 20px 32px;
 }
 
@@ -387,11 +394,11 @@ body {
     color: #ffffff;
 }
 
-
 .rules {
     width: 100%;
     height: auto;
     display: flex;
+    justify-content: space-between;
     /* margin-top: 160px; */
     margin-bottom: 160px;
 }
@@ -401,18 +408,10 @@ body {
     font-weight: 900;
     line-height: 38.4px;
     color: #ffffff;
-    margin-right: 312px;
     margin-bottom: 48px;
 }
 
-.rules .rule {
-    display: flex;
-    flex-direction: column;
-}
-
 .rules .rule .rule-content {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 40px;
     border-bottom: 1px solid #525252;
 }
@@ -438,15 +437,19 @@ body {
     height: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     border-radius: 160px;
     background: #ffffff;
 }
 
 .tool-header-wrap {
     max-width: 1296px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.tool-header-wrap h1 {
+.tool-header-wrap h2 {
     font-size: 80px;
     line-height: 96px;
     font-weight: 900;
@@ -455,24 +458,22 @@ body {
 }
 
 .search {
+    width: 100%;
     position: relative;
     margin-top: 80px;
     background: #F2F2F2;
     border: 1px solid #F2F2F2;
     border-radius: 16px;
     overflow: hidden;
-    background: pink;
 }
 
-
-.search input[type="text"] {
+.search input[type="search"] {
     width: 100%;
     padding: 20px 0px 20px 76px;
-    gap: 12px;
     border: none;
 }
 
-.search input[type="text"]:focus {
+.search input[type="search"]:focus {
     border: 1px solid #000;
 }
 
@@ -486,16 +487,13 @@ body {
 
 
 .tool-nav {
-    max-width: 100%;
     margin-top: 24px;
     margin-bottom: 40px;
     display: flex;
     justify-content: space-between;
-    /* position: relative; */
 }
 
 .tool-nav .filter {
-    padding: 20px 60px 20px 40px;
     border: 1px solid #F2F2F2;
     border-radius: 16px;
     align-items: center;
@@ -509,6 +507,7 @@ body {
     color: #020202;
     text-align: center;
     text-decoration: none;
+    padding: 20px 60px 20px 40px;
 }
 
 .tool-nav .filter .filter_alt {
@@ -566,10 +565,7 @@ body {
     border: none;
 }
 
-
 .tool-wrap {
-    max-width: 1920px;
-    height: auto;
     display: flex;
     align-items: flex-start;
 }
@@ -609,9 +605,6 @@ body {
     margin-top: 8px;
 }
 
-
-
-filter,
 .filter2 {
     display: flex;
     justify-content: flex-end;
@@ -681,7 +674,7 @@ filter,
     max-width: 416px;
     margin: 5px;
     border: 1px solid #ccc;
-    border-radius: 16px 16px 16px 16px;
+    border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -742,10 +735,7 @@ filter,
 .tool-cards .tool-group {
     display: flex;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 15px;
-    padding-bottom: 13px;
+    padding: 15px 20px 13px 20px;
     align-items: center;
     border-top: 1px solid #ccc;
 }
@@ -803,40 +793,40 @@ filter,
 }
 
 .footer {
-    max-width: 1296px;
+    width: 67.5%;
     padding-top: 158px;
     display: flex;
     flex-direction: column;
-    padding-left: 12px;
-    padding-right: 12px;
     background: #000;
 }
 
 .footer-header {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .footer .footer-header h4 {
+    width: 34%;
     font-size: 32px;
     font-weight: 900;
     line-height: 38.4px;
     color: #ffffff;
-    margin-right: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 
-
 .footer-header .QAs {
-    max-width: 856px;
+    width: 66%;
     display: flex;
     flex-direction: column;
     margin-bottom: 120px;
 }
 
 .footer-header .QAs .QA {
-    max-width: 856px;
-    display: flex;
+    width: 100%;
+    /* display: flex; */
     color: #ffffff;
     border: 1px solid #525252;
     border-radius: 16px;
@@ -870,8 +860,9 @@ filter,
 }
 
 .QAs .QA .QA-content {
+    max-height: 84px;
     display: none;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     padding-left: 75px;
@@ -879,6 +870,10 @@ filter,
     margin-bottom: 40px;
     color: #ffffff;
     text-align: left;
+}
+
+.footer {
+    width: 67.5%;
 }
 
 .footer .footer-content {
@@ -899,19 +894,30 @@ filter,
     flex-direction: column;
 }
 
-.footer-content .footer-title1 {
+.footer-content .footer-title1 a {
     font-size: 80px;
     line-height: 96px;
     font-weight: 900;
     color: #ffffff;
 }
 
+.footer-content .footer-title1 a:hover {
+    opacity: 0.8;
+}
+
 .footer-content .footer-title2 {
+    margin-top: 8px;
+}
+
+.footer-content .footer-title2 a {
     font-size: 80px;
     line-height: 96px;
     font-weight: 900;
     color: #ffffff;
-    margin-top: 8px;
+}
+
+.footer-content .footer-title2 a:hover {
+    opacity: 0.8;
 }
 
 .footer .bottom {
@@ -930,8 +936,6 @@ filter,
     font-weight: 700;
     color: #ffffff;
     margin-right: 100px;
-    /* margin-bottom: 36px; */
-
 }
 
 .footer .bottom .link {
@@ -976,10 +980,7 @@ filter,
 
 
 .mPrice {
-    max-width: 1296px;
-    margin: 0 auto;
     padding: 0 12px;
-    height: 100%;
     position: relative;
     background: #000;
     display: none;
@@ -1021,7 +1022,6 @@ filter,
     border: 0;
     color: #ffffff;
     display: none;
-    /* 在電腦版時不顯示 */
 }
 
 .mNavbar-btn:hover {
@@ -1041,8 +1041,6 @@ filter,
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* 在電腦版時不顯示 */
-    list-style-type: none;
     /* min-height: calc(100vh - 81px -148px); */
     height: calc(100vh - 229px);
     justify-content: center;
@@ -1054,7 +1052,6 @@ filter,
 .mNavbar-collapse .mNavbar-center {
     list-style-type: none;
     margin-bottom: 8px;
-    display: block;
     width: 200px;
     height: 200px;
 }
@@ -1074,8 +1071,6 @@ filter,
 }
 
 .mFooter {
-    max-width: 1320px;
-    height: 148px;
     bottom: 0;
     left: 12px;
     position: absolute;
@@ -1135,11 +1130,6 @@ filter,
         max-width: 100%;
     }
 
-    .content .title {
-        font-size: 48px;
-        line-height: 57.6px;
-    }
-
     .content .deco {
         position: relative;
         height: 117px;
@@ -1173,7 +1163,7 @@ filter,
         max-width: 100%
     }
 
-    .tool-header-wrap h1 {
+    .tool-header-wrap h2 {
         font-size: 32px;
         line-height: 38.4px;
     }
@@ -1193,11 +1183,11 @@ filter,
         justify-content: center;
     }
 
-    .tool-nav .filter {
+    .filter2 {
         display: none;
     }
 
-    .select-order {
+    .dropdown {
         display: none;
     }
 
@@ -1206,29 +1196,23 @@ filter,
         line-height: 38.4px;
     }
 
-
     .rules h4 {
         max-width: 280px;
-        margin-right: 80px;
     }
 
-
-    .footer {
-        max-width: 100%;
+    .footer .footer-header {
+        display: flex;
+        justify-content: space-between;
     }
 
     .footer .footer-header h4 {
         width: 280px;
-        margin-right: 150px;
     }
 
     .footer-header .QAs {
         max-width: 100%;
     }
 
-    .footer .footer-content {
-        flex-direction: column;
-    }
 
     .footer .footer-content .footer_image {
         margin-bottom: 40px;
@@ -1256,27 +1240,48 @@ filter,
         width: 100%;
     }
 
-    .content .title .title1 {
-        max-width: 400px;
-        font-size: 48px;
-        line-height: 57.6px;
+    .content .title1 h1 {
+        font-size: 80px;
+        line-height: 96px;
     }
 
-    .content .title .title2 {
-        font-size: 28px;
-        line-height: 33.6px;
-        padding-left: 300px;
+    .content .title2 {
         margin-top: 64px;
     }
 
+    .content .title2 h3 {
+        font-size: 28px;
+        line-height: 33.6px;
+    }
+
     .price {
-        padding-left: 12px;
-        padding-right: 12px;
+        max-width: 100%;
+        margin-top: 120px;
+        margin-bottom: 120px;
+    }
+
+    .price h5 {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    .teachers {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .teacher-card {
+        width: 100%;
+    }
+
+
+    .teacher-card .lesson-fees .start .arrow_outward {
+        margin-left: 14.67px;
     }
 
     .rules {
         flex-direction: column;
-        /* margin-top: 120px; */
         margin-bottom: 120px;
     }
 
@@ -1288,16 +1293,17 @@ filter,
         padding-left: 55px;
     }
 
-    .footer-header {
-        flex-direction: column;
-    }
-
     .footer .bottom {
         flex-direction: column;
     }
 }
 
 @media(max-width:768px) {
+    .content .title1 h1 {
+        font-size: 48px;
+        line-height: 57.6px;
+    }
+
     .content .deco {
         height: 117px;
     }
@@ -1322,32 +1328,6 @@ filter,
     .deco .deco-img:nth-child(3) {
         left: 0;
     }
-
-    .price {
-        max-width: 100%;
-        margin-top: 120px;
-        margin-bottom: 120px;
-    }
-
-    .price h5 {
-        font-size: 20px;
-        line-height: 24px;
-        margin-bottom: 20px;
-    }
-
-    .teacher-card {
-        width: 636px;
-        height: 318px;
-    }
-
-    .teacher-card .name {
-        width: 100%;
-    }
-
-    .teacher-card .lesson-fees .start .arrow_outward {
-        margin-left: 14.67px;
-    }
-
 
     .tool-header {
         width: 100%;
@@ -1402,11 +1382,6 @@ filter,
         background: red;
     }
 
-    .rules {
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
     .rules h4 {
         font-size: 20px;
         line-height: 24px;
@@ -1423,7 +1398,8 @@ filter,
     }
 
     .footer {
-        margin-top: 120px;
+        width: 100%;
+        padding-top: 120px;
     }
 
     .footer .footer-header h4 {
@@ -1433,18 +1409,25 @@ filter,
 
     }
 
+    .footer .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-header .QAs {
+        width: 100%;
+    }
+
     .QAs .QA .QA-title h6 {
         font-size: 20px;
         line-height: 24px;
     }
 
+    .QAs .QA .QA-content {
+        max-height: fit-content;
+    }
 }
 
 @media(max-width:568px) {
-    .content .title .title2 {
-        padding-left: 106px;
-    }
-
     .tool-cards a .tool {
         max-width: 100%;
     }
@@ -1457,7 +1440,6 @@ filter,
     .service-cards .service-card li {
         max-width: 100%;
     }
-
 }
 
 @media (max-width:414px) {

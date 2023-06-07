@@ -46,6 +46,8 @@ function throttle(func, delay) {
   };
 }
 
+menuBtn.addEventListener('click', menuClick);
+
 //偵測螢幕寬度，復原手機右上角選單漢堡事件
 window.addEventListener('resize', throttle(function () {
   var screenWidth = window.innerWidth;
@@ -75,9 +77,9 @@ result.addEventListener('click', function (e) {
     accordition.innerHTML = '+';
     QAContent = accordition.parentElement.nextElementSibling;
     QAContent.style.display = 'none';
+
   }
 })
-
 
 //AI 工具王 menu 事件
 const menuLi = document.querySelectorAll('.menu li')
@@ -107,7 +109,6 @@ for (let i = 0; i < menuLi.length; i++) {
 
 //AI 工具王下拉選單
 // 開起選單
-
 const dropdownMenu = document.querySelector('.dropdown-menu')
 
 dropdownMenu.addEventListener('click', function (e) {
@@ -131,6 +132,7 @@ dropdownMenu.addEventListener('click', function (e) {
 
 
 // 切換按鈕文字
+$('.dropdown-menu2').hide();
 $('.dropdown-btn').click(function (e) {
   e.preventDefault();
   $('.dropdown-menu').show();
@@ -155,20 +157,7 @@ $('.old-to-new').click(function (e) {
   $('.dropdown-menu').hide()
 });
 
-$('.filter').mouseleave(function () {
-  $('.dropdown-menu').hide()
-});
 $('.filter2').mouseleave(function () {
   $('.dropdown-menu2').hide()
 });
 
-
-//分頁事件
-menuBtn.addEventListener('click', menuClick);
-const page = document.querySelectorAll('.page > li > a')
-for (let i = 0; i < page.length; i++) {
-  page[i].addEventListener('mouseenter', function () {
-    document.querySelector('.page .active').classList.remove('active')
-    this.parentNode.classList.add('active')
-  })
-}  
