@@ -592,9 +592,9 @@ body {
 }
 
 .tool-list-filter {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     display: none;
 }
 
@@ -768,6 +768,7 @@ body {
 }
 
 .pages {
+    width: 100%;
     display: flex;
     flex-direction: row-reverse;
     margin-top: 40px;
@@ -1188,7 +1189,7 @@ body {
     }
 
     .tool-header-wrap {
-        max-width: 100%
+        width: 100%
     }
 
     .tool-header-wrap h2 {

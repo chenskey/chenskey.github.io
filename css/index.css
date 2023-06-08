@@ -526,6 +526,7 @@ body {
 .tool-header {
     width: 100%;
     height: auto;
+    /* height: auto; *******/
     display: flex;
     justify-content: center;
     border-radius: 160px;
@@ -762,6 +763,7 @@ body {
 }
 
 .tool-cards {
+    /* max-width: 416px; */
     max-width: 416px;
     margin: 5px;
     border: 1px solid #ccc;
@@ -1095,6 +1097,7 @@ body {
     border: 0;
     color: #ffffff;
     display: none;
+    /* 在電腦版時不顯示 */
 }
 
 .mNavbar-btn:hover {
@@ -1205,6 +1208,7 @@ body {
 
     .swiper-container {
         max-width: 856px;
+
     }
 
     .content .title {
@@ -1283,6 +1287,7 @@ body {
         line-height: 57.6px;
     }
 }
+
 
 @media(max-width:1080px) {
     .content .service p {
@@ -1376,6 +1381,7 @@ body {
         top: 50px;
         text-align: center;
         background: #ffffff;
+        /* border: 1px solid #ccc; */
     }
 
     .header .nav li {
