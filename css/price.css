@@ -484,6 +484,7 @@ body {
 }
 
 .search input[type="search"]:focus {
+    width: 100%;
     border: 1px solid #000;
 }
 

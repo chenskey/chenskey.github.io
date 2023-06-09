@@ -84,36 +84,55 @@ for (let i = 0; i < menuLi.length; i++) {
     toolList.style.display = 'none';
     toolListFilter.style.display = 'flex';
     toolListFilter.innerHTML = "";
-    toolListFilter.innerHTML = `<li class="tool-cards">` + document.querySelector(`.tool-list .tool-cards:nth-child(${this.dataset.id})`).innerHTML + `</li>`;
+
+    const URL = `https://2023-engineer-camp.zeabur.app/api/v1/works?type=${menuLi[i].textContent}`
+
+    let aiWorkFilter = ""
+
+    axios.get(URL)
+      .then(function (response) {
+        const aiWorksFilter = response.data.ai_works.data
+
+        for (let i = 0; i < aiWorksFilter.length; i++) {
+          aiWorkFilter +=
+            `
+          <li class="tool-cards" data-id="${i + 1}">
+              <a href="#"><img
+                      class="tool"
+                      src=${aiWorksFilter[i].imageUrl}
+                      alt=${aiWorksFilter[i].title} />
+              </a>
+              <div class="tool-content">
+                  <h3 class="tool-name">${aiWorksFilter[i].title}</h3>
+                  <p class="tool-text">
+                      ${aiWorksFilter[i].description}
+                  </p>
+              </div>
+              <div class="model">
+                  <h3 class="model-name">AI 模型</h3>
+                  <span class="model-txt">${aiWorksFilter[i].model}</span>
+              </div>
+              <div class="tool-group">
+                  <h3 class="group-name">#${aiWorksFilter[i].type}</h3>
+                  <a href=${aiWorksFilter[i].link} target="_blank"><img
+                          class="share"
+                          src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/2023web-camp/icons/share.png"
+                          alt="分享" />
+                  </a>
+              </div>
+          </li>
+      `
+        }
+        toolListFilter.innerHTML = aiWorkFilter
+      })
 
   })
 }
-
 
 //AI 工具王下拉選單
 // 開起選單
 
 const dropdownMenu = document.querySelector('.dropdown-menu')
-
-dropdownMenu.addEventListener('click', function (e) {
-  toolList.style.display = 'none';
-  toolListFilter.style.display = 'flex';
-  toolListFilter.innerHTML = "";
-  text = "";
-  if (e.target.innerHTML == "由新到舊") {
-    for (let i = toolList.children.length; i > 0; i--) {
-      text += `<li class="tool-cards">` + document.querySelector(`.tool-list .tool-cards:nth-child(${i})`).innerHTML + `</li>`;
-    }
-    toolListFilter.innerHTML = text
-  } else {
-    for (let i = 1; i < toolList.children.length + 1; i++) {
-      text += `<li class="tool-cards">` + document.querySelector(`.tool-list .tool-cards:nth-child(${i})`).innerHTML + `</li>`;
-    }
-    toolListFilter.innerHTML = text
-  }
-}
-)
-
 // 切換按鈕文字
 $('.dropdown-btn').click(function (e) {
   e.preventDefault();
@@ -146,6 +165,79 @@ $('.filter2').mouseleave(function () {
   $('.dropdown-menu2').hide()
 });
 
+
+dropdownMenu.addEventListener('click', function (e) {
+  toolList.style.display = 'none';
+  toolListFilter.style.display = 'flex';
+  toolListFilter.innerHTML = "";
+  text = "";
+  if (e.target.innerHTML == "由新到舊") {
+    for (let i = toolList.children.length; i > 0; i--) {
+      text += `<li class="tool-cards">` + document.querySelector(`.tool-list .tool-cards:nth-child(${i})`).innerHTML + `</li>`;
+    }
+    toolListFilter.innerHTML = text
+  } else {
+    for (let i = 1; i < toolList.children.length + 1; i++) {
+      text += `<li class="tool-cards">` + document.querySelector(`.tool-list .tool-cards:nth-child(${i})`).innerHTML + `</li>`;
+    }
+    toolListFilter.innerHTML = text
+  }
+}
+)
+
+
+// AI 工具王全部清單
+//let toolList = document.querySelector('.tool-list')
+let aiWork = ""
+
+axios.get('https://2023-engineer-camp.zeabur.app/api/v1/works')
+  .then(function (response) {
+    const aiWorks = response.data.ai_works.data
+    console.log(aiWorks.length)
+
+    for (let i = 0; i < aiWorks.length; i++) {
+      aiWork +=
+        `
+      <li class="tool-cards" data-id="${i + 1}">
+          <a href="#"><img
+                  class="tool"
+                  src=${aiWorks[i].imageUrl}
+                  alt=${aiWorks[i].title} />
+          </a>
+          <div class="tool-content">
+              <h3 class="tool-name">${aiWorks[i].title}</h3>
+              <p class="tool-text">
+                  ${aiWorks[i].description}
+              </p>
+          </div>
+          <div class="model">
+              <h3 class="model-name">AI 模型</h3>
+              <span class="model-txt">${aiWorks[i].model}</span>
+          </div>
+          <div class="tool-group">
+              <h3 class="group-name">#${aiWorks[i].type}</h3>
+              <a href=${aiWorks[i].link} target="_blank"><img
+                      class="share"
+                      src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/main/2023web-camp/icons/share.png"
+                      alt="分享" />
+              </a>
+          </div>
+      </li>
+  `
+    }
+    toolList.innerHTML = aiWork
+  })
+
+
+//分頁事件
+/* menuBtn.addEventListener('click', menuClick);
+const page = document.querySelectorAll('.page > li > a')
+for (let i = 0; i < page.length; i++) {
+  page[i].addEventListener('mouseenter', function () {
+    document.querySelector('.page .active').classList.remove('active')
+    this.parentNode.classList.add('active')
+  })
+} */
 
 //顧客評論事件
 var swiper = new Swiper(".swiper-container", {

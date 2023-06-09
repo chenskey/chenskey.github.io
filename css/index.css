@@ -165,7 +165,7 @@ body {
 
 
 .header {
-    padding: 20px 0;
+    /* padding: 20px 0; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -671,7 +671,7 @@ body {
 .tool-list-filter {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     display: none;
 }
 
